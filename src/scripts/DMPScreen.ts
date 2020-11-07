@@ -125,6 +125,8 @@ export class DMPScreen {
 
   private toggle() {
     if (this.audio.element.paused) {
+      this.audio.nextSource();
+
       this.audio.element.play().then(() => {
         this.showRightButton();
       });

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Эксперимент Filipov DMP</title>
+  <meta name="viewport" content="width=device-width">
+  <meta content="telephone=no" name="format-detection">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    .filipov {
+        position: fixed;
+
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        font-family: 'Roboto Mono', monospace;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        user-select: none;
+    }
+
+    .filipov__inner {
+        /*background-color: #fff;*/
+        /*box-shadow: #999 1vmin 1vmin 3vmin .5vmin;*/
+        /*border-radius: 2px;*/
+
+        margin: 0;
+        padding: 5vmin;
+
+        height: 60vmin;
+        width: 80vmin;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .filipov__exp, .filipov__name, .filipov__dev {
+        display: block;
+        margin: 0;
+        padding: 0;
+
+        color: #f8f8f8;
+
+        line-height: 0.8;
+
+        text-transform: uppercase;
+    }
+
+    .filipov__exp {
+        font-size: 12vmin;
+    }
+
+    .filipov__name {
+        font-size: 45.5vmin;
+
+        flex-grow: 1;
+    }
+
+    .filipov__dev {
+        text-align: right;
+        font-size: 2vmin;
+    }
+  </style>
+</head>
+<body>
+  <section class="filipov">
+    <h1 class="filipov__inner">
+      <span class="filipov__exp">эксперимент</span>
+      <span class="filipov__name">DMP</span>
+      <span class="filipov__dev">filipov</span>
+    </h1>
+  </section>
+</body>
+</html>

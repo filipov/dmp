@@ -1,0 +1,15 @@
+/deployments/docker/dev/docker-compose.yml
+/deployments/node/interpreter/
+/node.tar.gz
+
+node_modules
+
+dist
+
+.idea
+.DS_Store
+
+.ssh/*
+!.ssh/.keep
+
+target

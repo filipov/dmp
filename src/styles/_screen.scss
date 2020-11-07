@@ -1,0 +1,33 @@
+.screen {
+  &__button {
+    fill: #052525;
+
+    cursor: pointer;
+  }
+
+  &__equalizer {
+    fill: rgba(#052525, 0.7);
+
+    &2 {
+      fill: rgba(#052525, 0.5);
+    }
+
+    &3 {
+      fill: rgba(#052525, 0.3);
+    }
+  }
+
+  &__current {
+    fill: #052525;
+
+    font: bold 30px Roboto Mono;
+  }
+
+  .play {
+    fill: #fff;
+  }
+
+  .pause {
+    fill: #fff;
+  }
+}

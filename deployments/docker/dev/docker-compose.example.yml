@@ -1,0 +1,24 @@
+version: '3.2'
+
+services:
+  filipov-dmp:
+    environment:
+      PORT: 8080
+    build:
+      dockerfile: Dockerfile
+      context: .
+    restart: unless-stopped
+    volumes:
+      - ../../..:/app
+    working_dir: /app
+    command: tail -f /dev/null
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    networks:
+      - internal
+
+networks:
+  internal:
+    external: false

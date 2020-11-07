@@ -1,0 +1,25 @@
+<svg class="screen" xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+    <g class="screen__equalizer3">
+        <path id="equalizer3" d="M0,0L1,1L1,0Z" />
+    </g>
+    <g class="screen__equalizer2">
+        <path id="equalizer2" d="M0,0L1,1L1,0Z" />
+    </g>
+    <g class="screen__equalizer">
+        <path id="equalizer" d="M0,0L1,1L1,0Z" />
+    </g>
+    <g class="screen__button">
+        <circle cx="250" cy="250" r="50" />
+        <g class="pause">
+            <rect x="235" y="235" rx="2" ry="2" width="10" height="30" />
+            <rect x="255" y="235" rx="2" ry="2" width="10" height="30" />
+        </g>
+        <g class="play">
+            <path d="M239 235 l 28 13 q 2 2, 0 4 l -28 13 Z" />
+        </g>
+    </g>
+
+    <g class="screen__current">
+        <text x="100" y="100" id="current">-1/10</text>
+    </g>
+</svg>

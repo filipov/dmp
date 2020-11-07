@@ -1,0 +1,6 @@
+{
+  "root": "dist/",
+  "clean_urls": false,
+  "https_only": false,
+  "basic_auth": true
+}

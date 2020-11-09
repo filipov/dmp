@@ -1,24 +1,27 @@
+$color: #2e4482;
+
 .screen {
   &__button {
-    fill: #052525;
+    fill: $color;
 
     cursor: pointer;
   }
 
   &__equalizer {
-    fill: rgba(#052525, 0.7);
+    fill: rgba(#fffcd7, 0.7);
 
-    &2 {
-      fill: rgba(#052525, 0.5);
+    & #equalizer-2 {
+      fill: rgba(#ff9cfc, 0.5);
+      color: #ff9cfc;
     }
 
-    &3 {
-      fill: rgba(#052525, 0.3);
+    & #equalizer-3 {
+      fill: rgba(#dfdcfc, 0.7);
     }
   }
 
   &__current {
-    fill: #052525;
+    fill: $color;
 
     font: bold 30px Roboto Mono;
   }

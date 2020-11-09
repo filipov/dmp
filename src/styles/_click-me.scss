@@ -1,0 +1,22 @@
+.click-me {
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 4vmax;
+
+  color: #fff;
+
+  cursor: pointer;
+
+  small {
+    font-size: 2vmax;
+  }
+}

@@ -9,6 +9,7 @@ import audioFile7 from '@/audio/Soft-Inspiration.mp3';
 import audioFile8 from '@/audio/Space-Orbit.mp3';
 import audioFile9 from '@/audio/Upbeat__Party.mp3';
 
+const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
 
 export class DMPAudio {
   readonly element: HTMLAudioElement;
@@ -28,13 +29,15 @@ export class DMPAudio {
     audioFile9,
   ];
 
-  currentSource = -1;
+  currentSource = 4;
+
+  startConnect = true;
 
   constructor () {
     this.element = document.createElement('audio');
 
-    this.element.volume = 0.6;
-    this.element.preload = "none";
+    this.element.volume = 1.0;
+    this.element.preload = 'none';
 
     this.nextSource();
 
@@ -44,7 +47,22 @@ export class DMPAudio {
       this.play();
     }
 
+    this.element.controls = true;
+
     document.body.append(this.element);
+
+    this.element.addEventListener('click',() => {
+      this.context = new AudioContext();
+      // const node = this.context.createScriptProcessor(2048, 1, 1);
+      this.analyzer = this.context.createAnalyser();
+
+      let source = this.context
+        .createMediaElementSource(this.element);
+
+      source.connect(this.analyzer);
+      // source.connect(this.context.destination);
+      this.analyzer.connect(this.context.destination);
+    });
   }
 
   public pause() {
@@ -57,21 +75,28 @@ export class DMPAudio {
 
   public getAnalyzer() {
     if (!this.element.paused) {
-      if (!this.analyzer && !this.context) {
-        this.context = new AudioContext();
-        this.analyzer = this.context.createAnalyser();
-
-        let source = this.context
-          .createMediaElementSource(this.element);
-
-        source.connect(this.context.destination);
-        source.connect(this.analyzer);
-      }
+    //   if (this.startConnect) {
+    //     this.startConnect = false;
+    //
+    //     setTimeout(() => {
+    //       this.context = new AudioContext();
+    //       // const node = this.context.createScriptProcessor(2048, 1, 1);
+    //       this.analyzer = this.context.createAnalyser();
+    //
+    //       let source = this.context
+    //         .createMediaElementSource(this.element);
+    //
+    //       source.connect(this.analyzer);
+    //       // source.connect(this.context.destination);
+    //       this.analyzer.connect(this.context.destination);
+    //       // node.connect(this.analyzer);
+    //       // node.connect(this.context.destination);
+    //     }, 100)
+    //   }
 
       if (this.analyzer) {
-        // Размерность преобразования Фурье
-        // Если не понимаете, что это такое - ставьте 512, 1024 или 2048 ;)
-        this.analyzer.fftSize = 8192;
+        this.analyzer.smoothingTimeConstant = 0.3;
+        this.analyzer.fftSize = 1024;
 
         // Создаем массивы для хранения данных
         let fFrequencyData = new Float32Array(this.analyzer.frequencyBinCount);

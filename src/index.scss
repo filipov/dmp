@@ -1,11 +1,14 @@
 @import 'styles/screen';
+@import 'styles/_click-me.scss';
 
 html, body {
   margin: 0;
   padding: 0;
 
   height: 100%;
-  width: 100%;
+  width: 100vw;
+
+  overflow: hidden;
 }
 
 body {
@@ -14,5 +17,18 @@ body {
   justify-content: center;
   align-items: center;
 
-  background: radial-gradient(transparent, rgba(#052525, 0.4));
+  background: radial-gradient(rgba($color, 1.0), rgba(#546bab, 0.8));
+}
+
+audio {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  //transform: translateX(-50%) translateY(-50%);
+
+  height: 100%;
+  width: 100%;
+
+  opacity: 0;
 }
